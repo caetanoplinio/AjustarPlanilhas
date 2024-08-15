@@ -1,0 +1,14 @@
+Sub AjustarPlanilhas()
+    Dim ws As Worksheet
+
+    ' Iterar sobre cada planilha no workbook
+    For Each ws In ThisWorkbook.Sheets
+        ' Ajustar a largura da coluna E para autofit
+        ws.Columns("E:E").AutoFit
+        
+        ' Deletar as linhas 12 a 45
+        ws.Rows("12:45").Delete
+    Next ws
+    
+    MsgBox "Ajustes concluídos!"
+End Sub
